@@ -1,0 +1,41 @@
+/* RESET RULES */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul, ol, menu {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+/* COMPONENTS */
+
+/* STYLE */
+
+.container{
+    display: flex;
+    background-color: midnightblue;
+    width: fit-content;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+/* UTILITIES */
+
+.btn{
+    cursor: pointer;
+}
+
+/* DEBUG */
