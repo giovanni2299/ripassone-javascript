@@ -176,15 +176,30 @@
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// CREO UN CONTATORE CHE ESEGUA UNA AZIONE DOPO TOT SECONDI
+// CREO UN CONTATORE CHE STAMPI "CIAO" DOPO 9 SECONDI
+
+// setTimeout(dimmiCiao, 9000);                      // do un intervallo di tempo espresso in millisecondi dall'apertura della pagina per eseguire la funzione "dimmi ciao"
+
+// function dimmiCiao() {                            // creo la funzione "dimmi ciao"
+//     console.log('ciao, sono passati 3 secondi')   // dico alla funzione di stampare il suo contenuto
+// };
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// CREO UN CONTATORE CHE ESEGUA UNA AZIONE OGNI TOT SECONDI DA QUANDO PREMO UN BOTONE E CHE SI FERMI QUANDO NE PREMO UN ALTRO
+// CREO UN CONTATORE CHE AUMENTI DI 1 OGNI SECONDO
+
+// let secondi = 0;                       // dichiaro la variabile secondi
+
+// function aggiungiSecondi(){            // creo la funzione per aumentare la variabile 
+//     secondi++                          // le dico di incrementarsi di 1
+//     console.log(secondi);              // le dico di stampare il nuovo valore
+// };
+
+// setInterval(aggiungiSecondi, 1000);    // dico alla funzione di ripetersi ogni secondo
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// DATA UNA STRINGA, TRASFORMALA IN ALFABETO FARFALLINO
+// DATA UNA STRINGA, LA TRASFORMO IN ALFABETO FARFALLINO
 
 // const stringa = 'luca';                                // dichiaro una stringa di un nome
 
@@ -193,23 +208,22 @@
 // for (let i = 0; i < stringa.length; i++){              // dichiaro un ciclo for che scorra tutte le lettere della stringa
 //     const lettera = stringa[i];                        // dichiaro una cstante che sia uguale alla singola lettera della stringa
 
-//     if(lettera === 'a'){                               // dichiaro una condizione secondo cui se una delle lettere è "a"
-//         stringaArray.push('afa')
-//     } else if (lettera === 'e') {
-//         stringaArray.push('efe')
-//     } else if (lettera === 'i') {
-//         stringaArray.push('ifi')
-//     } else if (lettera === 'o') {
-//         stringaArray.push('ofo')
-//     } else if (lettera === 'u') {
-//         stringaArray.push('ufu')
-//     } else {
-//         stringaArray.push(lettera)
+//     if(lettera === 'a'){                               // dichiaro una condizione secondo cui se una delle lettere è "a" 
+//         stringaArray.push('afa')                       // la sostituisce con "afa"
+//     } else if (lettera === 'e') {                      // dichiaro una condizione secondo cui se una delle lettere è "e"
+//         stringaArray.push('efe')                       // la sostituisce con "efe"
+//     } else if (lettera === 'i') {                      // dichiaro una condizione secondo cui se una delle lettere è "i"
+//         stringaArray.push('ifi')                       // la sostituisce con "ifi"
+//     } else if (lettera === 'o') {                      // dichiaro una condizione secondo cui se una delle lettere è "o"
+//         stringaArray.push('ofo')                       // la sostituisce con "ofo"
+//     } else if (lettera === 'u') {                      // dichiaro una condizione secondo cui se una delle lettere è "u"
+//         stringaArray.push('ufu')                       // la sostituisce con "ufu"
+//     } else {                                           // altrimenti se non è una vocale
+//         stringaArray.push(lettera)                     // dico di inserirla così com'è
 //     }
-
 // }
 
-// console.log(stringaArray.join('')) 
+// console.log(stringaArray.join(''))                     // dico di stampare tutte le lettere ottenute unendole assieme senza virgole o spazi vuoti                 
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -256,35 +270,100 @@
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// DESTRUTURAZIONE DI UN ARRAY
+
+// const array = [1, 2, 3, 4, 5, 6];                                     // dichiaro un array di numeri da stampare in base alla posizione inserita soto
+
+// const [primo, secondo, terzo, quarto, quinto, sesto] = array;         // così li stampo in ordine (1-2-3-4-5-6)   N.B. l'ordine equivale a dove scrivo nella destrutturazione i valori "il primo corrisponde all'1, il secondo al 2 ecc."
+
+// const [sesto, quinto, quarto, terzo, secondo, primo] = array;         // così li stampo in oridne inverso (6-5-4-3-2-1)
+
+// const [terzo, quinto, secondo, quarto, sesto, primo] = array;         // così li stampo in oridne sparso (6-3-1-4-2-5)
+
+// console.log(array);
+
+// const [primo, , terzo, quarto, , sesto] = array;                      // così stampo solo quelli non vuoti nell'ordine stabilito (1-3-4-6)
+
+// console.log(primo, terzo, quarto, sesto);
+
+// const [primo, , terzo, ...restOperator] = array;                      // così stampo le cifre segnate nell'ordine stabilito e un array con le cifre successive all'ultima segnata (1-3-[4-5-6])
+
+// console.log(primo, terzo, restOperator);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// USO LO SPREAD OPERATOR PER COPIARE UN ARRAY
+
+// const array = [1, 2, 3, 4, 5, 6];                                        // dichiaro un array di numeri
+
+// const arrayParole = ['ciao', 'io', 'sono', 'christian']                  // dichiaro un array di parole
+
+// const arrayCopiato = [...array];                                         // uso l'operatore spread per copiare i numeri del vecchio array nel nuovo
+
+// console.log(arrayCopiato);                                               // stampo l'array di numeri copiato
+
+// const arrayCopiato1 = [...arrayParole];                                  // uso l'operatore spread per copiare le parole del vecchio array nel nuovo
+
+// console.log(arrayCopiato1);                                              // stampo l'array di parole copiato
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// DESTRUTTURAZIONE DI UN OGGETO
+
+// const studente = {                                              // dichiaro un oggeto chiamato "studente"
+//     nome: 'alessio',                                            // gli assegno la proprietà "nome" con valore "alessio"
+//     età: 26,                                                    // gli assegno la proprietà "età" con valore "26"
+//     id: 315,                                                    // gli assegno la proprietà "id" con valore "315"
+//     scuola: 'harvard',                                          // gli assegno la proprietà "scuola" con valore "harvard"
+// }
+
+// console.log(studente);                                          // stampo l'oggeto "studente"
+
+// const {nome, età, id, scuola, peso} = studente;                 // destrutturo l'oggetto per prendere i paramentri: nome, età, id, scuola, peso
+
+// console.log(nome, età, id, scuola, peso);                       // stampo i parametri richiesti  N.B. eventuali parametri non presenti come "peso" daranno undefined
+
+// const nuovoStudente = {                                         // dichiaro un oggetto chiamato "nuovo studente"
+//     nome: nome,                                                 // gli assegno la proprietà "nome" con valore uguale al dato ottenuto dalla destrutturazione di prima
+//     età: età,                                                   // gli assegno la proprietà "età" con valore uguale al dato ottenuto dalla destrutturazione di prima
+//     id: id,                                                     // gli assegno la proprietà "id" con valore uguale al dato ottenuto dalla destrutturazione di prima
+//     scuola: scuola,                                             // gli assegno la proprietà "scuola" con valore uguale al dato ottenuto dalla destrutturazione di prima
+//     peso: 78,                                                   // gli assegno la proprietà "peso" con valore "78"
+// }
+
+// console.log(nuovoStudente);                                     // stampo l'oggeto "nuovo studente"
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+
 // ACCEDERE A UNA SOLA PROPRIETÀ DI UN ARRAY DI OGGETI
 
-const arrayOggetti = [
+// const arrayOggetti = [
 
-    {
-        nome: 'giovanni',
-        cognome: 'sorrentino',
-        età: 24
-    }, 
+//     {
+//         nome: 'giovanni',
+//         cognome: 'sorrentino',
+//         età: 24
+//     }, 
 
-    {
-        nome: 'christian',
-        cognome: 'corelli',
-        età: 24 
-    },
+//     {
+//         nome: 'christian',
+//         cognome: 'corelli',
+//         età: 24 
+//     },
 
-    {
-        nome: 'davide',
-        cognome: 'morellato',
-        età: 32 
-    },
-]
+//     {
+//         nome: 'davide',
+//         cognome: 'morellato',
+//         età: 32 
+//     },
+// ]
 
-// const singolaPersona = arrayOggetti[0];
+// const singolaPersona = arrayOggetti[0];               // stampo un singolo oggeto
 
 // console.log(singolaPersona)
 
 
-// for (let i = 0; i < arrayOggetti.length; i++){
+// for (let i = 0; i < arrayOggetti.length; i++){                 // stampo i nomi di tutti gli oggeti
 //     const singoloOggeto = arrayOggetti[i]
 //     const singoloOggetoNome = singoloOggeto.nome
 
@@ -292,12 +371,74 @@ const arrayOggetti = [
 // }
 
 
-// const singoloOggeto1 = arrayOggetti[0];
+// const singoloOggeto1 = arrayOggetti[0];                       // stampo un singolo nome di un singolo oggeto
 // const singoloOggetoNome1 = singoloOggeto1.nome
 
 // console.log(singoloOggetoNome1)
 
 
-const persona = arrayOggetti[0];
+// const persona = arrayOggetti[0];                                     // stampo tutte le proprietà di un singolo oggetto
 
-console.log(persona.nome, persona['cognome'], persona['età'])
+// console.log(persona.nome, persona['cognome'], persona['età'])
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+
+// CREO UN ARRAY DI OGGETI E LI ORDINO IN BASE AL PREZZO CON LA PROPRIETÀ "TO SORT"
+
+// const paniniDelPaninaro = [                                                                                     // creo array di oggeti
+//     {                                                        
+//         nome: 'cotto e fontina',
+//         ingredienti: 'prosciutto coto e fontina',                                                               // assegno all'oggetto certi parametri con certi valori
+//         prezzo: 2.50,
+//     },
+
+//     {
+//         nome: 'cotoleta',
+//         ingredienti: 'latuga pomodoro e cotoleta',                                                             // assegno all'oggetto certi parametri con certi valori
+//         prezzo: 3.50,
+//     },
+
+//     {
+//         nome: 'bufala', 
+//         ingredienti: 'mozzarella pomodo basilico',                                                            // assegno all'oggetto certi parametri con certi valori
+//         prezzo: 3.00,
+//     },
+
+//     {
+//         nome: 'sfizioso',
+//         ingredienti: 'pesto di pistacchi, hamburgher, pomodoro',                                             // assegno all'oggetto certi parametri con certi valori
+//         prezzo: 7,
+//     },
+// ];
+
+// const paniniOdrinati = paniniDelPaninaro.toSorted((panino1, panino2) => panino1.prezzo - panino2.prezzo);   // uso l'operatore "to sorted" per conforntare i prezzi e ordinarli in ordine crescente
+
+// console.log(paniniOdrinati);                                                                                // stampo i panini ordinati in modo crescente   
+
+// const paniniOdrinati1 = paniniDelPaninaro.toSorted((panino1, panino2) => panino2.prezzo - panino1.prezzo);  // uso l'operatore "to sorted" per conforntare i prezzi e ordinarli in ordine decrescente
+
+// console.log(paniniOdrinati1);                                                                               // stampo i panini ordinati in modo crescente 
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+
+// COPIO UN ARRAY CON LA PROPRIETÀ "MAP"
+
+// const numeri = [1, 3, 4, 5, 7, 9, 2];                 //creo un array di numeri
+
+// console.log(numeri);                                  // stampo l'array
+
+// const arrayCopia = numeri.map((element) => {          // nomino una costante per l'array creato in automatico dall'operatore "map"
+//     return element                                    // dico quali elementi voglio inserirvi all'interno, altrimenti i dati sarebbero "undefined"
+// })
+
+// console.log(arrayCopia);                              // stampo l'array copiato
+
+//--------------------------------------------------------------------------------------------------------------------------------------------
+
+// INVERTO L'ORDINE DELL'ARRAY COPIATO NELL'ESERCIZIO PRECEDENTE COL "REVERSE"
+
+// const arrayInvertito = arrayCopia.reverse();       //creo una variabile in cui stampare al contrario l'array copiato con l'operatore "reverse"
+
+// console.log(arrayInvertito);                       // stampo l'array 
+
+//---------------------------------------------------------------------------------------------------------------------------------------------
