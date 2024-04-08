@@ -442,3 +442,26 @@
 // console.log(arrayInvertito);                       // stampo l'array 
 
 //---------------------------------------------------------------------------------------------------------------------------------------------
+
+//ESERCIZIO CON VUE 
+const { createApp } = Vue
+
+createApp({
+  data() {
+    return {
+      message:'ciao mamma',
+      numero:1,
+      arraySenior:['ciao mamma', 'ciao nonna', 'ciao papà'],
+      inputValue: '',
+      inputArray:[],
+    }
+  },
+  methods:{
+    addString(){
+        this.inputArray.push(this.inputValue)
+    }
+  },
+  mounted(){
+    console.log(this.inputArray)
+  }
+}).mount('#app')
