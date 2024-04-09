@@ -450,7 +450,7 @@ createApp({
   data() {
     return {
       message:'ciao mamma',
-      numero:1,
+      numero: 1,
       arraySenior:['ciao mamma', 'ciao nonna', 'ciao papà'],
       inputValue: '',
       inputArray:[],
